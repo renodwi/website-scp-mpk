@@ -22,6 +22,8 @@ if(isset($_GET['logoutadmin'])) $_SESSION['adminstatus'] = false;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -68,6 +70,7 @@ if(isset($_GET['logoutadmin'])) $_SESSION['adminstatus'] = false;
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
     <?php 
         require "./layout/header.php";

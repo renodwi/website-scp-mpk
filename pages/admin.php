@@ -81,7 +81,7 @@ if($_SESSION['adminstatus'] == false) echo "<script>window.location.href = './in
                 <div>
                     <div class="mb-4">
                         <label for="addsiswa_nama" class="block text-sm font-medium text-gray-700">Nama</label>
-                        <input type="text" name="addsiswa_nama" id="addsiswa_nama" placeholder="Tulis pertanyaan disini" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required>
+                        <input type="text" name="addsiswa_nama" id="addsiswa_nama" placeholder="Tulis nama siswa disini" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required>
                     </div>
                     <div class="mb-4">
                         <label for="addsiswa_kelas" class="block text-sm font-medium text-gray-700">Kelas</label>
@@ -118,9 +118,31 @@ if($_SESSION['adminstatus'] == false) echo "<script>window.location.href = './in
             <div class="mt-5 p-5 bg-white rounded-xl shadow-xl mb-5">
                 <h1 class="text-lg font-black text-blue-500 font-sans uppercase mb-5">Data Akun Siswa</h1>
                 <form action="" method="GET" class="mb-5 p-5">
+                    <input type="hidden" name="page" value="admin">
                     <div class="mb-4">
-                        <label for="search_nis" class="block text-sm font-medium text-gray-700">Cari berdasarkan NIS</label>
-                        <input type="number" name="search_nis" id="search_nis" class="p-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        <label for="sort_kelas" class="block text-sm font-medium text-gray-700">Sortir berdasarkan Kelas</label>
+                        <select name="sort_kelas" id="sort_kelas" class="p-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="10">Kelas 10</option>
+                            <option value="11">Kelas 11</option>
+                            <option value="12">Kelas 12</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="sort_kelaske" class="block text-sm font-medium text-gray-700">Sortir berdasarkan Kelas Ke</label>
+                        <select name="sort_kelaske" id="sort_kelaske" class="p-5 mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="1">Kelas 1</option>
+                            <option value="2">Kelas 2</option>
+                            <option value="3">Kelas 3</option>
+                            <option value="4">Kelas 4</option>
+                            <option value="5">Kelas 5</option>
+                            <option value="6">Kelas 6</option>
+                            <option value="7">Kelas 7</option>
+                            <option value="8">Kelas 8</option>
+                            <option value="9">Kelas 9</option>
+                            <option value="10">Kelas 10</option>
+                            <option value="11">Kelas 11</option>
+                            <option value="12">Kelas 12</option>
+                        </select>
                     </div>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Cari</button>
                 </form>
@@ -135,40 +157,48 @@ if($_SESSION['adminstatus'] == false) echo "<script>window.location.href = './in
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <?php
-                        $search_nis = isset($_GET['search_nis']) ? $_GET['search_nis'] : '';
+                        $sort_kelas = isset($_GET['sort_kelas']) ? $_GET['sort_kelas'] : '';
+                        $sort_kelaske = isset($_GET['sort_kelaske']) ? $_GET['sort_kelaske'] : '';
+                        
                         $sql = "SELECT * FROM siswa";
-                        if (!empty($search_nis)) {
-                            $sql .= " WHERE nis = '$search_nis'";
+                        $conditions = [];
+                        
+                        if (!empty($sort_kelas)) {
+                            $conditions[] = "kelas = '$sort_kelas'";
+                        }
+                        if (!empty($sort_kelaske)) {
+                            $conditions[] = "kelaske = '$sort_kelaske'";
+                        }
+                        
+                        if (count($conditions) > 0) {
+                            $sql .= " WHERE " . implode(" AND ", $conditions);
                         } else {
                             $sql .= " ORDER BY RAND() LIMIT 10";
                         }
+                        
                         $result = $conn->query($sql);
-
+                        
                         if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
+                            while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                        <td class='px-6 py-4 whitespace-nowrap'>".$row["nama"]."</td>
-                                        <td class='px-6 py-4 whitespace-nowrap'>".$row["kelas"]."-".$row["kelaske"]."</td>
-                                        <td class='px-6 py-4 whitespace-nowrap'>".$row["nis"]."</td>";
+                                        <td class='px-6 py-4 whitespace-nowrap'>" . $row["nama"] . "</td>
+                                        <td class='px-6 py-4 whitespace-nowrap'>" . $row["kelas"] . "-" . $row["kelaske"] . "</td>
+                                        <td class='px-6 py-4 whitespace-nowrap'>" . $row["nis"] . "</td>";
                                 echo "<td class='px-6 py-4 whitespace-nowrap'>";
                                 echo ($row["status"] == 1) ? "<span class='font-semibold text-blue-500'>Sudah berpartisipasi</span>" : "<span class='font-semibold text-red-500'>Belum berpartisipasi</span>";
-                                echo "</td>";
-                                echo "<td class='px-6 py-4 whitespace-nowrap'><button onclick='deleteSiswa(".$row["id"].")' class='p-2 bg-red-500 hover:bg-red-700 rounded text-sm text-white'>Hapus</button></td>";
-                                echo "</tr>";
-
-                                    
+                                echo "</td>
+                                </tr>";
                             }
                         } else {
                             echo "<tr><td colspan='4' class='px-6 py-4 whitespace-nowrap'>Tidak ada data</td></tr>";
                         }
-
-                        unset($_SESSION['search_nis']);
                         ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    
     <script>
         function deletePertanyaan(id) {
             Swal.fire({
@@ -309,5 +339,5 @@ if($_SESSION['adminstatus'] == false) echo "<script>window.location.href = './in
                 }
             });
         }
-    </script>
+        </script>
 </section>
