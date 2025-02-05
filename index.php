@@ -11,6 +11,12 @@ if(isset($_GET['search_nis'])) $_GET['page'] = 'admin';
 if(!isset($_SESSION['adminstatus'])) $_SESSION['adminstatus'] = false;
 
 if(isset($_GET['logoutadmin'])) $_SESSION['adminstatus'] = false;
+
+$close_timestamp = 1738778400;
+$target_timestamp = 1738800000;
+$current_timestamp = time();
+
+if($current_timestamp >= $close_timestamp && $current_timestamp <= $target_timestamp) $_GET['page'] = "belumwaktunya";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,6 +104,10 @@ if(isset($_GET['logoutadmin'])) $_SESSION['adminstatus'] = false;
         else if($_GET['page'] == "respon")
         {
             require "./pages/respon.php";
+        }
+        else if($_GET['page'] == "belumwaktunya")
+        {
+            require "./pages/belumwaktunya.php";
         }
         else
         {
