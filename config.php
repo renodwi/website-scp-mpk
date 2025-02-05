@@ -1,6 +1,6 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "mpk_scp");
-// $conn = mysqli_connect("localhost", "root", "", "pesdesis_pesdeka");
+/* $conn = mysqli_connect("localhost", "root", "", "mpk_scp"); */
+$conn = mysqli_connect("localhost", "u626944758_mpkscp", "Mpk12345", "u626944758_mpkscp");
 
 // Memeriksa koneksi
 if ($conn->connect_error) {
