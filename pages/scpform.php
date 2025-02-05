@@ -34,11 +34,10 @@ if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.p
             <ul class="list-decimal p-3">
                 <li>Ini merupakan website resmi yang digunakan oleh MPK SMA Negeri 1 Demak untuk program kerja <i>School Care Programme</i>.</li>
                 <li>Seluruh Siswa/i diwajibkan untuk mengisi formulir ini.</li>
-                <li>Siswa/i berhak untuk mengisi formulir di bawah ini sesuai dengan apa yang dirasakan sendiri.</li>
+                <li>Siswa/i berhak untuk mengisi formulir di bawah ini sesuai dengan apa yang pendapatnya pribadi tanpa paksaan pendapat orang lain.</li>
                 <li>Formulir ini dibuat dengan tujuan untuk menampung aspirasi siswa/i.</li>
                 <li>Siswa/i berhak mendapatkan kebebasan sebebas-bebasnya untuk mengisi formulir ini.</li>
                 <li>Ketua kelas bertanggung jawab untuk mengoordinasi siswa/i sesuai kelasnya.</li>
-                <li>Barang siapa siswa/i yang tidak mengisi formulir ini, maka akan mendapatkan denda sebesar <b>Rp.50.000</b> / siswa yang akan dilimpahkan kepada ketua kelas.</li>
             </ul>
         </div>
 
