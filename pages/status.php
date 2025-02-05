@@ -15,8 +15,11 @@ if ($result && mysqli_num_rows($result) > 0) {
     $status = $siswa['status'];
     $nama = $siswa['nama'];
 } else {
-    die("Data siswa tidak ditemukan.");
+    echo("Data siswa tidak ditemukan.");
 }
+
+if(!isset($_SESSION['nis'])) $_SESSION['nis'] = "kosong";
+if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.php?page=login'</script>";
 ?>
 <section>
     <div class="bg-gray-100 flex items-center justify-center h-screen">

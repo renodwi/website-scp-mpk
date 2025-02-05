@@ -17,6 +17,9 @@ if ($result->num_rows > 0) {
         $pertanyaan[$row['bidang']][] = $row;
     }
 }
+
+if(!isset($_SESSION['nis'])) $_SESSION['nis'] = "kosong";
+if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.php?page=login'</script>";
 ?>
 
 <section>
