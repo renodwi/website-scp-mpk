@@ -26,8 +26,8 @@ $data = [
     [$nis, 'Saran MPK', 'Saran MPK', 1, 1, $saran_mpk],
     [$nis, 'Kritik OSIS', 'Kritik OSIS', 1, 1, $kritik_osis],
     [$nis, 'Saran OSIS', 'Saran OSIS', 1, 1, $saran_osis],
-    [$nis, $nama_ekstrakulikuler, 'Saran Ekstrakulikuler', 1, 1, $kritik_ekstrakulikuler],
-    [$nis, $nama_ekstrakulikuler, 'Kritik Ekstrakulikuler', 1, 1, $saran_ekstrakulikuler],
+    [$nis, $nama_ekstrakulikuler, 'Kritik Ekstrakulikuler', 1, 1, $kritik_ekstrakulikuler],
+    [$nis, $nama_ekstrakulikuler, 'Saran Ekstrakulikuler', 1, 1, $saran_ekstrakulikuler],
 ];
 
 // Eksekusi query untuk setiap data
