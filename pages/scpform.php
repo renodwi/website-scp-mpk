@@ -81,18 +81,24 @@ if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.p
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
-                        <div class="mb-8">
-                            <h2 class="text-lg font-bold text-gray-800 mb-2">Keorganisasian MPK</h2>
-                            <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
-                                <textarea name="Kritik_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk MPK" required></textarea>
-                                <textarea name="Saran_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk MPK" required></textarea>
+                        <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
+                            <h1>Berikut merupakan kolom kritik saran untuk organisasi MPK/OSIS</h1>
+                            <div class="mb-8">
+                                <h2 class="text-lg font-bold text-gray-800 mb-2">Organisasi MPK</h2>
+                                <textarea name="Kritik_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk MPK"></textarea>
+                                <textarea name="Saran_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk MPK"></textarea>
                             </div>
-                        </div>
-                        <div class="mb-8">
-                            <h2 class="text-lg font-bold text-gray-800 mb-2">Keorganisasian OSIS</h2>
-                            <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
-                                <textarea name="Kritik_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk OSIS" required></textarea>
-                                <textarea name="Saran_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk OSIS" required></textarea>
+                            <div class="mb-8">
+                                <h2 class="text-lg font-bold text-gray-800 mb-2">Organisasi OSIS</h2>
+                                <textarea name="Kritik_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk OSIS"></textarea>
+                                <textarea name="Saran_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk OSIS"></textarea>
+                            </div>
+                            <h1>Berikut jika memiliki keritik/saran terhadap organisasi/ekstrakulikuler lainnya</h1>
+                            <div class="mb-8">
+                                <h2 class="text-lg font-bold text-gray-800 mb-2">Organisasi OSIS</h2>
+                                <textarea name="Nama_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Nama Ekstrakulikuler"></textarea>
+                                <textarea name="Kritik_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik Ekstrakulikuler"></textarea>
+                                <textarea name="Saran_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran Ekstrakulikuler"></textarea>
                             </div>
                         </div>
                     <button type="submit" id="submitBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>

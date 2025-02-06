@@ -8,6 +8,10 @@ $saran_mpk = $_POST['Saran_Mpk'];
 $kritik_osis = $_POST['Kritik_Osis'];
 $saran_osis = $_POST['Saran_Osis'];
 
+$nama_ekstrakulikuler = $_POST['Nama_Ekstra'];
+$saran_ekstrakulikuler = $_POST['Kritik_Ekstra'];
+$kritik_ekstrakulikuler = $_POST['Saran_Ekstra'];
+
 $sql = "INSERT INTO pertanyaan_respon (nis, bidang, pertanyaan, type, rating, alasan) VALUES (?, ?, ?, ?, ?, ?)";
 
 // Persiapkan statement
@@ -22,6 +26,8 @@ $data = [
     [$nis, 'Saran MPK', 'Saran MPK', 1, 1, $saran_mpk],
     [$nis, 'Kritik OSIS', 'Kritik OSIS', 1, 1, $kritik_osis],
     [$nis, 'Saran OSIS', 'Saran OSIS', 1, 1, $saran_osis],
+    [$nis, $nama_ekstrakulikuler, 'Saran Ekstrakulikuler', 1, 1, $kritik_ekstrakulikuler],
+    [$nis, $nama_ekstrakulikuler, 'Kritik Ekstrakulikuler', 1, 1, $saran_ekstrakulikuler],
 ];
 
 // Eksekusi query untuk setiap data
