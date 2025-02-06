@@ -93,9 +93,10 @@ if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.p
                                 <textarea name="Kritik_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk OSIS"></textarea>
                                 <textarea name="Saran_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk OSIS"></textarea>
                             </div>
-                            <h1>Berikut jika memiliki keritik/saran terhadap organisasi/ekstrakulikuler lainnya</h1>
-                            <div class="mb-8">
-                                <h2 class="text-lg font-bold text-gray-800 mb-2">Organisasi OSIS</h2>
+                            <h1 class="text-lg">Berikut jika memiliki keritik/saran terhadap organisasi/ekstrakulikuler lainnya</h1>
+                            <p class="text-sm">Jika memiliki keritik/saran lebih dari 1 organisasi/ekstrakulikuler, silahkan tambahkan identidas organisasi/ekstrakulikuler pada kolom keritik dan saran.</p>
+                            <div class="mb-8 mt-8">
+                                <h2 class="text-lg font-bold text-gray-800 mb-2">Keritik/Saran untuk organisasi/ekstrakulikuler</h2>
                                 <textarea name="Nama_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Nama Ekstrakulikuler"></textarea>
                                 <textarea name="Kritik_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik Ekstrakulikuler"></textarea>
                                 <textarea name="Saran_Ekstra" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran Ekstrakulikuler"></textarea>
