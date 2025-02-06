@@ -51,7 +51,7 @@ if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.p
                         <div class="mb-8">
                             <h2 class="text-lg font-bold text-gray-800 mb-2"><?php echo htmlspecialchars($bidang); ?></h2>
                             <?php foreach ($items as $item): ?>
-                                <div class="bg-white rounded-xl shadow-xl p-5 mb-10">
+                                <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
                                     <p class="text-gray-700 mb-2"><?php echo htmlspecialchars($item['pertanyaan']); ?></p>
                                     <div class="flex items-center space-x-4">
                                         <?php if ($item['type'] == 1): ?>
@@ -81,6 +81,20 @@ if($_SESSION['nis'] == "kosong") echo "<script>window.location.href = './index.p
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
+                        <div class="mb-8">
+                            <h2 class="text-lg font-bold text-gray-800 mb-2">Keorganisasian MPK</h2>
+                            <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
+                                <textarea name="Kritik_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk MPK" required></textarea>
+                                <textarea name="Saran_Mpk" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk MPK" required></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <h2 class="text-lg font-bold text-gray-800 mb-2">Keorganisasian OSIS</h2>
+                            <div class="bg-white rounded-xl shadow-xl p-5 mb-10 ">
+                                <textarea name="Kritik_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Kritik untuk OSIS" required></textarea>
+                                <textarea name="Saran_Osis" class="mt-2 w-full p-2 border rounded-lg" placeholder="Saran untuk OSIS" required></textarea>
+                            </div>
+                        </div>
                     <button type="submit" id="submitBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
                 </form>
             </div>

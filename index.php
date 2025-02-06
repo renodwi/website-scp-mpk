@@ -13,7 +13,7 @@ if(!isset($_SESSION['adminstatus'])) $_SESSION['adminstatus'] = false;
 if(isset($_GET['logoutadmin'])) $_SESSION['adminstatus'] = false;
 
 $close_timestamp = 1738778400;
-$target_timestamp = 1738800000;
+$target_timestamp = 0;
 $current_timestamp = time();
 
 if($current_timestamp >= $close_timestamp && $current_timestamp <= $target_timestamp) $_GET['page'] = "belumwaktunya";
